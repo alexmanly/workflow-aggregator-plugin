@@ -1,6 +1,7 @@
 FROM jenkins:1.642.3
 
 USER root
+RUN curl -LO https://omnitruck.chef.io/install.sh && bash ./install.sh -P chefdk && rm install.sh
 
 # installed maven package is still 3.0.5, pretty old
 ENV MAVEN_VERSION 3.3.1
